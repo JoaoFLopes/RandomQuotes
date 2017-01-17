@@ -1,0 +1,33 @@
+.image-resize {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+.new-font{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.bigger-font{
+    font-size: 50px;
+}
+
+.quotes{
+    width:40%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    border: solid #a3a3a3;
+    border-radius: 5px;
+    padding: 20px;
+    height: auto;
+    color: white;
+}
+
+.quote-text{
+    font-size: 25px;
+}
+
+.author{
+    font-size: 15px;
+    font-style: italic;
+}

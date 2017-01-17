@@ -2,35 +2,6 @@
  * Created by hiro on 17-01-2017.
  */
 
-/* This is the code to change the quotes at random */
-
-var quotes = ["Thank you Mario! But our Princess is in another castle!",
-    "Its a-me, Mario!",
-    "This is your fault. I'm going to kill you. And all the cake is gone. You don't even care, do you?",
-    "The right man in the wrong place can make all the difference in the world.",
-    "Stay frosty.",
-    "Would you kindly",
-    "Snake? Snake? SNAAAAAAAAKE!!!",
-    "War. War Never Changes",
-    "Requiescat in pace.",
-    "Do a Barrel Roll!",
-    "All your base are belong to us.",
-    "I used to be an adventurer like you but then I took an arrow to the knee"
-];
-var authors = ["Yoshi",
-    "Mario",
-    "GLaDOS",
-    "G-Man",
-    "Captain Price",
-    "Frank Fontain",
-    "Colonel Campbell",
-    "Fallout 3",
-    "Ezio Auditore da Firenze",
-    "Peppy Hare",
-    "CATS",
-    "Skyrim Guard"
-];
-
 $(document).ready(function(){
 
     var randomQuote;
@@ -41,14 +12,13 @@ $(document).ready(function(){
 
     function getQuote(){
 
-        var len = quotes.length;
-        randomNumber = Math.floor(Math.random() * len);
+        var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
 
-        randomQuote = quotes[randomNumber];
-        randomAuthor = authors[randomNumber];
-
-        $(".quote-text").text(randomQuote);
-        $(".author").text("- " + randomAuthor);
+        $.getJSON(url, function(data){
+            console.log(data.quoteText)
+            $(".quote-text").html(data.quoteText);
+            $(".author").html("- " + data.quoteAuthor);
+        })
 
     };
 
